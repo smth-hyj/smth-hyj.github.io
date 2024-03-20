@@ -1,6 +1,6 @@
 ---
 title: Linux 도커(1)
-date: 2025-03-19 09:00:00 +09:00
+date: 2025-03-20 09:00:00 +09:00
 categories: [국비, 도커]
 tags: [linux, container, docker, 리눅스, centos]		# TAG는 반드시 소문자로 이루어져야함!
 ---
