@@ -196,3 +196,48 @@ ARGUMENT 종류
 - default VPC/default Subnet 에 EC2 인스턴스 만들기
 - 이 때, Data Source를 사용하여 EC2 인스턴스의 이미지를 조회하여 사용할 수 있도록 설정해야함
 
+> data.aws_ami_instance.id
+
+[중요한 테라폼 페이지](https://developer.hashicorp.com/terraform/language/state/remote-state-data)
+
+
+ELB 를 테라폼으로 구성
+health check 
+
+data로 선언했다는 것은 기존에 선언된것을 쓰겠다는 뜻
+
+```md
+for_each = [
+    [1, 2, 3] # 리스트 형식
+    {k1=v1, k2=v2} # 맵 형식
+    (1, 2, 3) # 셋(set) 형식
+]
+each.key, each.value
+자동 변수
+```
+
+반드시 알아야하는 코드
+1. 개발자를 위한 EC2 인스턴스 생성
+
+```[미니 프로젝트 1]
+
+* provier 설정
+* VPC 설정
+* Public subnet 설정
+* Internet Gateway 설정
+* Public Routing 설정
+* Public Routing Table Association(Public subnet <-> Public Routing) 설정
+* Public Security Group 설정
+
+* AMI Data Source 설정
+* SSH Key 생성
+* EC2 Instance 생성
+
+* User Data 
+	* docker 설치
+* 테스트 (SSH Connection 연결 -> docker 실행)```
+
+2. 3-Tier 생성
+    - 가장 많이 쓰이는 구조
+3. CI/CD 파이프라인 코드 만들기 시간
+    - CICD 파이프라인 코드 - EKS 파일 만들기
